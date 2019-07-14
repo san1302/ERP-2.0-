@@ -1,10 +1,76 @@
-const Sequelize = require('sequelize')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const studentSchema = new Schema({
+   roll : {
+     type : String,
+     unique : true,
+     required: true
+   },
+   password:{type:String,
+              // required: true
+            },
+   name:{type:String,
+              // required: true
+            },
+   email: {type:String,
+              unique: true,
+              // required: true,
+          },
+   branch:{type:String,
+              // required: true
+            },
+   semester:{type:Number,
+              // required: true
+            },
+    markId: {
+        type: Schema.Types.ObjectId,
+        ref:'Mark',
+        
+    },
+
+    classroomId : {
+      type: Schema.Types.ObjectId,
+      ref: 'Classroom',
+    }
+});
+
+ module.exports = mongoose.model('Student',studentSchema);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const Sequelize = require('sequelize')
 
 const sequelize = require('../util/database');
 
 const Student = sequelize.define('student', {
 
-    /* name : Sequelize.STRING, */
+    
   roll: {
        type: Sequelize.STRING,
        allowNull: false,
@@ -19,4 +85,5 @@ const Student = sequelize.define('student', {
 });
 
 
-module.exports = Student;
+module.exports = Student; */
+

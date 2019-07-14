@@ -1,0 +1,42 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+</head>
+
+
+<body>
+    <main>
+        <form class="login-form" action="/teacherRegistered" method="POST">
+            <div class="form-control">
+                <label for="roll">Roll Number</label>
+                <input type="text" name="roll" id="roll">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="form-control">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="email">
+            </div>
+             <div class="form-control">
+                 <label for="branch">Branch</label>
+                 <input type="text" name="branch" id="branch">
+             </div>
+             <div class="form-control">
+                 <label for="semester">semester</label>
+                 <input type="number" name="semester" id="semester">
+             </div>
+            <div class="form-control">
+                <label for="subject">subject</label>
+                <input type="text" name="subject" id="subject" placeholder="Enter the subject name you want to teach">
+            </div>
+            <button class="btn" type="submit">Register</button>
+        </form>
+    </main>
+
+    <%- include('../includes/end.ejs') %>
